@@ -63,7 +63,6 @@ print(Y)
 print("___________________________________________________________________________")
 print(Y_train)
 
-# plt.plot(feature_extraction)
 
 if (prediction == 1):
     print("It is not a spam Mail.")
