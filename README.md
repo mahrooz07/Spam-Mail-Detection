@@ -51,6 +51,7 @@
 <p>I built a predictive model to classify new emails as spam or not spam.</p>
 
 <p><strong>Note : Give whatever mail you want to check whether it is spam or ham</strong></p> 
+
 ![image](https://github.com/user-attachments/assets/47ed455d-1666-4209-96c8-e235909f9ff2)
 
 <H1>12. Visualizing Data</H1>
