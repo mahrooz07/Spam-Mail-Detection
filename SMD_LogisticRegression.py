@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
-import matplotlib.pyplot as plt
 
 raw_data = pd.read_csv("D:/Projects/Spam Mail Detection/mail_data.csv")
 
@@ -42,7 +41,7 @@ print("Accuracy on Training data : ",accuracy_on_training_data)
 
 predicted_Y_values_test = model.predict(X_test_features)
 accuracy_on_testing_data = accuracy_score(Y_test,predicted_Y_values_test)
-print("Accuracy on Testing data : ",accuracy_on_testing_data)
+print("Accuracy on Testing data : ", accuracy_on_testing_data)
 
 
 #Building a predictive model
@@ -69,3 +68,16 @@ if (prediction == 1):
 else:
     print("Its a spam Mail.")
 
+import pickle
+
+with open('spam_mail_model.txt','wb') as f:
+    pickle.dump(model,f)
+
+with open('spam_mail_model.txt','rb')  as m:
+    mp = pickle.load(m)
+
+prediction_with_my_model = mp.predict(Mail_Features)
+if(prediction_with_my_model == 1):
+    print("Its not a spam mail and it is classified using my model which is saved to a file")
+else:
+    print("Its a spam mail and it is classified using my model which is saved to a file")
